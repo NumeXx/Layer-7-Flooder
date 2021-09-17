@@ -3,7 +3,7 @@
 import socket
 import os, sys
 import time
-import multiprocessing, random
+import threading, random
 
 print("""
 [ - ]====================[ - ]
@@ -57,11 +57,6 @@ def startAttack():
       pass
 
 
-def magicRunner():
-  for i in range(run):
-    mr = multiprocessing.Process(target=startAttack)
-    mr.setDaemon = False
-    mr.start()
-
 if __name__ == "__main__":
-	magicRunner()
+	for i in range(run):
+              th = threading.Thread(target=startAttack).start()
