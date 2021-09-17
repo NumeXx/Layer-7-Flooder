@@ -13,6 +13,7 @@ print("""
 [ - ]====================[ - ]
 \n""")
 ip = input("[ ? ] Enter IP Target : ")
+ip = socket.gethostbyname(ip)
 port = int(input("[ ? ] Port : "))
 times = int(input("[ ? ] How long you wanna attack : "))
 run = int(input("[ ? ] Runner : "))
